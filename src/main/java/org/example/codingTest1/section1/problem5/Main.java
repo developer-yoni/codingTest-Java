@@ -19,7 +19,6 @@ public class Main {
 
         tmp = new StringBuilder(tmp).reverse().toString();
         int idx = 0;
-        String result = "";
 
         for (int i = 0; i < chArray.length; i++) {
 
@@ -27,12 +26,9 @@ public class Main {
 
                 chArray[i] = tmp.charAt(idx++);
             }
-
-            // chArray에서 바로 toString() 하면 -> ch요소들이 문자로 바뀔 줄알았는데 -> 그게 안됨 -> 그래서 별도로 문자열로 합쳐줘야 문제가 안생김
-            result += chArray[i];
         }
 
-        return result;
+        return String.valueOf(chArray);
     }
 
     public static void main(String[] args) {
