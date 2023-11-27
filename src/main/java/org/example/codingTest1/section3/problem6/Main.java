@@ -15,17 +15,37 @@ public class Main {
 
         while (true) {
 
-            countOfK = (array[endIdx]==0) ? (countOfK-1) : countOfK;
-
-
-            endIdx++;
-            if (endIdx == n) {
+            if (endIdx >= array.length) {
 
                 break;
             }
+
+            if (array[endIdx] == 0) {
+
+                if (countOfK > 0) {
+
+                    countOfK--;
+                } else {
+
+                    count--;
+                    if (array[startIdx] == 0) {
+
+                        countOfK++;
+                    }
+                    startIdx++;
+                    continue;
+                }
+            }
+
+            count++;
+            if (count > max) {
+
+                max = count;
+            }
+            endIdx++;
         }
 
-
+        return max;
     }
 
     public static void main(String[] args) {
